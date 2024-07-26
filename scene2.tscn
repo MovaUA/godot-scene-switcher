@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckvmd7yd0j71v"]
+
+[ext_resource type="Script" path="res://scene2.gd" id="1_oxmbj"]
+
+[sub_resource type="Theme" id="Theme_mfr4d"]
+default_font_size = 64
+
+[node name="GridContainer" type="GridContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_mfr4d")
+columns = 2
+script = ExtResource("1_oxmbj")
+
+[node name="CurrentSceneLabel" type="Label" parent="."]
+layout_mode = 2
+text = "Current scene"
+
+[node name="CurrentSceneName" type="Label" parent="."]
+layout_mode = 2
+text = "scene2"
+
+[node name="NextSceneLabel" type="Label" parent="."]
+layout_mode = 2
+text = "Next scene"
+
+[node name="NextSceneName" type="Label" parent="."]
+layout_mode = 2
+text = "scene1"
+
+[node name="SwitchSceneButton" type="Button" parent="."]
+layout_mode = 2
+text = "Switch to the next scene"
+
+[connection signal="pressed" from="SwitchSceneButton" to="." method="_on_switch_scene_button_pressed"]
